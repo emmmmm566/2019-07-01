@@ -1,0 +1,66 @@
+#ifndef WORD_H
+#define WORD_H
+#include "mysqlbase.h"
+#include <string>
+class Word :public MySQLBase{
+private:
+	string academic_start;
+	string birthdate;
+	int change_time;
+	string classroom;
+	string dept;
+	string exam_id;
+	string gender;
+	string id;
+	int length_of_schooling;
+	string major;
+	int major_code;
+	string major_name;
+	string minority;
+	string name;
+	string name_pin;
+	string native_place;
+	string password;
+	int role;
+	int student_id;
+public:
+	void SetAcademicStart(string);
+	void SetBirthdate(string);
+	void SetChangeTime(int);
+	void SetClassroom(string);
+	void SetDept(string);
+	void SetExamId(string);
+	void SetGender(string);
+	void SetId(string);
+	void SetLengthOfSchooling(int);
+	void SetMajor(string);
+	void SetMajorCode(int);
+	void SetMajorName(string);
+	void SetMinority(string);
+	void SetName(string);
+	void SetNamePin(string);
+	void SetNativePlace(string);
+	void SetPassword(string);
+	void SetRole(int);
+	void SetStudentId(int);
+	string GetAcademicStart(void);
+	string GetBirthdate(void);
+	int GetChangeTime(void);
+	string GetClassroom(void);
+	string GetDept(void);
+	string GetExamId(void);
+	string GetGender(void);
+	string GetId(void);
+	int GetLengthOfSchooling(void);
+	string GetMajor(void);
+	int GetMajorCode(void);
+	string GetMajorName(void);
+	string GetMinority(void);
+	string GetName(void);
+	string GetNamePin(void);
+	string GetNativePlace(void);
+	string GetPassword(void);
+	int GetRole(void);
+	int GetStudentId(void);
+}
+#endif
