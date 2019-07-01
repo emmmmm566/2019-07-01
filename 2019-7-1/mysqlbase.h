@@ -48,9 +48,9 @@ protected:
 			return nullptr;
 		}
 		m_preStatement = m_conn->prepareStatement(sql);
-		//Ä£°åÕ¹¿ª²ÎÊý°ü
+		//æ¨¡æ¿å±•å¼€å‚æ•°åŒ…
 		int a[] = { (setParameter(m_parameter_index++, args), 0)... };
-		//indexÖØÖÃÎª1
+		//indexé‡ç½®ä¸º1
 		m_parameter_index = 1;
 		
 		m_res = m_preStatement->executeQuery();
@@ -67,9 +67,9 @@ protected:
 			m_conn = nullptr;
 		}
 		m_preStatement = m_conn->prepareStatement(sql);
-		//Ä£°åÕ¹¿ª²ÎÊý°ü
+		//æ¨¡æ¿å±•å¼€å‚æ•°åŒ…
 		int a[] = { (setParameter(m_parameter_index++, args), 0)... };
-		//indexÖØÖÃÎª1
+		//indexé‡ç½®ä¸º1
 		m_parameter_index = 1;
 
 		int count = m_preStatement->executeUpdate();
@@ -102,10 +102,8 @@ protected:
 	*/
 	template<class T>
 	void setParameter(int i, T t){
-		//¸ù¾ÝÄäÃûÍøÓÑ¶¨ÂÉ:
-		//ÄäÃûÍøÓÑÐ´Ê²Ã´,ÄãÐ´Ê²Ã´¡£
-		if (t == nullptr)
-			return;
+		//æ ¹æ®åŒ¿åç½‘å‹å®šå¾‹:
+		//åŒ¿åç½‘å‹å†™ä»€ä¹ˆ,ä½ å†™ä»€ä¹ˆã€‚
 		m_preStatement->setString(i,t);
 	}
 	template<>
